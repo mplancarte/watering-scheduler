@@ -8,6 +8,7 @@
 <h1>Add Plant</h1>
 
 <form method="post" style="max-width:600px;">
+
     <div class="form-group">
         <label th:for="name">Plant Name</label>
         <input class="form-control" th:field="${plant.name}"/>
@@ -18,6 +19,21 @@
         <label th:for="description">Plant Description</label>
         <input class="form-control" th:field="${plant.description}" />
         <span th:errors="${plant.description}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="plantType">Plant Type</label>
+        <select name="plantTypeId">
+            <option th:each="plantType : ${plantTypes}"
+                    th:text="${plantType.name}"
+                    th:value="${plantType.id}"></option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label th:for="daysBetweenWatering">Number of Days Between Watering</label>
+        <input class="form-control" th:field="${plant.daysBetweenWatering}" />
+        <span th:errors="${plant.daysBetweenWatering}" class="error"></span>
     </div>
 
     <input type="submit" value="Add Plant" />

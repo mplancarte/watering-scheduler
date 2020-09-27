@@ -10,6 +10,9 @@
 <div class="plant-listing">
     <p th:text="${'Name: ' + plant.name}"></p>
     <p th:text="${'Description: ' + plant.description}"></p>
+    <p th:text="${'Plant Type: ' + plant.plantType.name}"></p>
+    <p th:text="${'Number of Days Between Watering: ' + plant.daysBetweenWatering}"></p>
+
 </div>
 
 

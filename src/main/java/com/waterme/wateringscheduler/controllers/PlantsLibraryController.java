@@ -16,7 +16,6 @@ public class PlantsLibraryController {
     @Autowired
     private PlantRepository plantRepository;
 
-
     @GetMapping("/plant-library")
     public String index(Model model) {
         model.addAttribute("title", "Plant Library");
