@@ -47,4 +47,12 @@ public class HomeController {
         plantRepository.save(newPlant);
         return "redirect:";
     }
+
+    @GetMapping("")
+    public String displayAddWateringForm(Model model) {
+        model.addAttribute("title","Add Watering Schedule");
+        model.addAttribute("plants",plantRepository.findAll());
+        return "index";
+    }
+
 }
