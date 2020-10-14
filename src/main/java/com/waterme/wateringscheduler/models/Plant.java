@@ -9,6 +9,10 @@ import javax.validation.constraints.Size;
 @Entity
 public class Plant extends AbstractEntity {
 
+    @NotBlank
+    @Size(min = 3, max = 60, message = "Enter a valid name between 3 and 60 characters.")
+    private String name;
+
     @ManyToOne
     private PlantType plantType;
 
@@ -36,5 +40,9 @@ public class Plant extends AbstractEntity {
     public int getDaysBetweenWatering() { return daysBetweenWatering; }
 
     public void setDaysBetweenWatering(int daysBetweenWatering) { this.daysBetweenWatering = daysBetweenWatering; }
+
+    public String getName() { return name; }
+
+    public void setName(String name) { this.name = name; }
 
 }
